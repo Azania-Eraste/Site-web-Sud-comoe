@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil regional du sud comoé</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Javascript/main.js"></script>
+    <script src="Javascript/article.js"></script>
+</head>
+<body>
+    <header >
+        
+        <div id="Header">
+            <img src="img/321752565_2145544562320407_3125677821786878754_n.jpg" alt="logo" onclick="openNewPage('index_Principale.html')">
+            <nav id="NavBar">
+                <ul class="list_line">
+                    <li onmouseenter="showtooltip('tooltip-1')" onclick="openNewPage('mutiple_redirect.html')">
+                        <label class="lb_menu" for="Territoire_et_demographie">Territoire et demographie</label>
+                        <select name="Territoire_et_demographie" id="Territoire_li">
+                        </select>
+                    </li>
+                    <li onclick="openNewPage('mutiple_redirect.html')">
+                        <label class="lb_menu" for="Developement_economique">Developement economique</label>
+                        <select name="Developement_economique" id="Developement_econè_li">
+
+                        </select>
+                    </li>
+                    <li onclick="openNewPage('mutiple_redirect.html')">
+                        <label class="lb_menu" for="Developement_Socioculturel">Developement socioculturel</label>
+                        <select name="Developement_Socioculturel" id="Developement_ecol_li">
+                        </select>
+                    </li>
+                    <li onclick="openNewPage('mutiple_redirect.html')">
+                        <label class="lb_menu" for="Infracstructure_et_urbanisation">Infracstructure et urbanisation</label>
+                        <select name="Infracstructure_et_urbanisation" id="Infracstructure_li">
+                        </select>
+                    </li>
+                    <li onclick="openNewPage('article.html')">
+                        <label class="lb_menu">Actualités</label>
+                    </li>
+                </ul>
+            </nav>
+            <div id="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div id="Header_Menu" >
+            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Territoire et demographie</button>
+            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Developement economique</button>
+            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Developement socioculturel</button>
+            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Infracstructure et urbanisation</button>
+            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Actualités</button>
+        </div>
+    </header>
+    <div class="tooltip" id="tooltip-1">
+        <a href="">caractéristiques térritoriales</a>
+        <a href="">Ressources naturelles</a>
+        <a href="">caractéristiques Sociodémographiques et peuplement</a>
+    </div>
+    <div class="tooltip" id="tooltip-2">
+        <a href="">Secteur Primaire</a>
+        <a href="">Secteur Secondaire</a>
+        <a href="">Secteur Tertiare</a>
+    </div>
+    <div class="tooltip" id="tooltip-3">
+        <a href="">Education</a>
+        <a href="">Santé et action social</a>
+        <a href="">Sécurité et protection</a>
+        <a href="">Culture,sports,loisirs et jeunesse</a>
+    </div>
+    <div class="tooltip" id="tooltip-4">
+        <a href="">Développement urbain</a>
+        <a href="">Transport et Logistique</a>
+        <a href="">Equipement et Infracstructure</a>
+    </div>
+    <div id="article-content">
+
+    </div>
+    <footer class="row">
+        <article id="links">
+            <h2>Liens externes</h2>
+            <ul class="footer_list">
+                <li>Agenda</li>
+            </ul>
+        </article>
+        <article id="Contact">
+            <h2 onclick="openNewPage('Contacte.html')">Contact</h2>
+            <ul class="footer_list">
+                <li>
+                    <label for="num">Numero</label>
+                    <p id="num"></p>
+                </li>
+                <li>
+                    <label for="Facebook">Facebook</label>
+                    <p id="Facebook"></p>
+                </li>
+                <li>
+                    <label for="Twitter">Twitter</label>
+                    <p id="Twitter"></p>
+                </li>
+                <li>
+                    <label for="youtube">youtube</label>
+                    <p id="youtube"></p>
+                </li>
+            </ul>
+        </article>
+        <article id="Newsletter">
+            <form method="post">
+                <input type="email" id="email" required placeholder="Email">
+                <label for="email" id="input_label">Email</label>
+                <button>Envoyer</button>
+            </form>
+            
+        </article>
+    </footer>
+    <div id="termes">
+        <h3>aza</h3>
+    </div>
+</body>
+</html>
