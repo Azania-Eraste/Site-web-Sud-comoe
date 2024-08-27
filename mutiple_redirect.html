@@ -15,26 +15,63 @@
             <img src="img/321752565_2145544562320407_3125677821786878754_n.jpg" alt="logo" onclick="openNewPage('index_Principale.html')">
             <nav id="NavBar">
                 <ul class="list_line">
-                    <li onmouseenter="showtooltip('tooltip-1')" onclick="openNewPage('mutiple_redirect.html')">
+                    <li onclick="openNewPage('mutiple_redirect.html')" id="Territoire_li">
                         <label class="lb_menu" for="Territoire_et_demographie">Territoire et demographie</label>
-                        <select name="Territoire_et_demographie" id="Territoire_li">
+                        <select name="Territoire_et_demographie" >
                         </select>
+                        <div class="tooltip" id="tooltip-1">
+                            <ul>
+                                <li><a href="">caractéristiques térritoriales</a></li>
+                                <hr>
+                                <li><a href="">Ressources naturelles</a></li>
+                                <hr>
+                                <li><a href="">caractéristiques Sociodémographiques et peuplement</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li onclick="openNewPage('mutiple_redirect.html')">
+                    <li onclick="openNewPage('mutiple_redirect.html')"  id="Developement_econe_li" >
                         <label class="lb_menu" for="Developement_economique">Developement economique</label>
-                        <select name="Developement_economique" id="Developement_econè_li">
-
+                        <select name="Developement_economique">
                         </select>
+                        <div class="tooltip" id="tooltip-2">
+                            <ul>
+                                <li><a href="">Secteur Primaire</a></li>
+                                <hr>
+                                <li><a href="">Secteur Secondaire</a></li>
+                                <hr>
+                                <li><a href="">Secteur Tertiare</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li onclick="openNewPage('mutiple_redirect.html')">
+                    <li onclick="openNewPage('mutiple_redirect.html')" id="Developement_ecol_li" >
                         <label class="lb_menu" for="Developement_Socioculturel">Developement socioculturel</label>
-                        <select name="Developement_Socioculturel" id="Developement_ecol_li">
+                        <select name="Developement_Socioculturel" >
                         </select>
+                        <div class="tooltip" id="tooltip-3">
+                            <ul>
+                                <li><a href="">Education</a></li>
+                                <hr>
+                                <li><a href="">Santé et action social</a></li>
+                                <hr>
+                                <li><a href="">Sécurité et protection</a></li>
+                                <hr>
+                                <li><a href="">Culture,sports,loisirs et jeunesse</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li onclick="openNewPage('mutiple_redirect.html')">
-                        <label class="lb_menu" for="Infracstructure_et_urbanisation">Infracstructure et urbanisation</label>
-                        <select name="Infracstructure_et_urbanisation" id="Infracstructure_li">
+                    <li onclick="openNewPage('mutiple_redirect.html')"  id="Infracstructure_li" >
+                        <label class="lb_menu" for="Infracstructure_et_urbanisation">Infrastructure et urbanisation</label>
+                        <select name="Infracstructure_et_urbanisation" >
                         </select>
+                        <div class="tooltip" id="tooltip-4">
+                            <ul>
+                                <li><a href="">Développement urbain</a></li>
+                                <hr>
+                                <li><a href="">Transport et Logistique</a></li>
+                                <hr>
+                                <li><a href="">Equipement et Infrastructure</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li onclick="openNewPage('article.html')">
                         <label class="lb_menu">Actualités</label>
@@ -52,31 +89,10 @@
             <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Territoire et demographie</button>
             <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Developement economique</button>
             <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Developement socioculturel</button>
-            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Infracstructure et urbanisation</button>
+            <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Infrastructure et urbanisation</button>
             <button class="button-nav" onclick="openNewPage('mutiple_redirect.html')">Actualités</button>
         </div>
     </header>
-    <div class="tooltip" id="tooltip-1">
-        <a href="">caractéristiques térritoriales</a>
-        <a href="">Ressources naturelles</a>
-        <a href="">caractéristiques Sociodémographiques et peuplement</a>
-    </div>
-    <div class="tooltip" id="tooltip-2">
-        <a href="">Secteur Primaire</a>
-        <a href="">Secteur Secondaire</a>
-        <a href="">Secteur Tertiare</a>
-    </div>
-    <div class="tooltip" id="tooltip-3">
-        <a href="">Education</a>
-        <a href="">Santé et action social</a>
-        <a href="">Sécurité et protection</a>
-        <a href="">Culture,sports,loisirs et jeunesse</a>
-    </div>
-    <div class="tooltip" id="tooltip-4">
-        <a href="">Développement urbain</a>
-        <a href="">Transport et Logistique</a>
-        <a href="">Equipement et Infracstructure</a>
-    </div>
     <div class="grid" id="redirect">
     </div>
     <footer class="row">

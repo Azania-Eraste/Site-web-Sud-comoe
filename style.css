@@ -4,7 +4,6 @@ body{
 }
 
 
-
 footer{
     width: 96%;
     background-color: #ece4e4;
@@ -51,7 +50,7 @@ button{
     background-color: #eae4e4;
     padding: 0 05px;
     color: #999;
-    transition:  all .3s ease;
+ 
 }
 
 input:focus + #input_label,
@@ -59,6 +58,7 @@ input:valid + #input_label{
     font-size: 11px;
     top: -07px;
 }
+
 
 input:focus + #input_label{
     color: blue;
@@ -68,6 +68,7 @@ input:invalid{
     border-color: #B51D1D;
 }
 
+textarea:focus,
 input:focus{
     border-color: blue;
     outline:  1px solid blue;
@@ -78,7 +79,7 @@ select{
 }
 
 select:focus{
-    border: none;
+    border: none; 
 }
 
 header{
@@ -88,6 +89,7 @@ header{
     margin: 0;
     z-index: 3;
     width: 100%;
+    height: auto;
     background-color: #fff;
     display: flex;
     align-content: center;
@@ -359,6 +361,23 @@ header{
     width: 70%;
 }
 
+#name{
+    font-size: 45px;
+    font-weight: bold;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
+.rice>h2{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.rice>img{
+    width: 100%;
+    border-radius: 10px;
+}
+
 .card{
     text-align: center;
     border: 1px solid rgb(26, 26, 119);
@@ -408,18 +427,58 @@ header{
     flex-direction: column;
 }
 
-
 .tooltip{
-    background-color: #fff;
-    color: #000;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    position: fixed;
-    z-index: 7;
-    max-width: 25vw;
-    line-height: 1.3rem;
     display: none;
+    transition: all 2s ease-in-out;
+}
+
+#tooltip-1{
+    left: 25%;
+}
+
+#tooltip-2{
+    left: 40%;
+}
+
+#tooltip-3{
+    left: 56%;
+}
+
+#tooltip-4{
+    left: 72%;
+}
+
+.list_line>li:hover .tooltip {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transition: all 2s ease-in-out;
+}
+
+.list_line>li:hover .tooltip ul hr{
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.list_line>li:hover .tooltip ul{
+    display: block;
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(26, 26, 119);
+    list-style: none;
+    transition: all 2s ease-in-out;
+}
+
+
+.list_line>li:hover .tooltip ul li{
+    transition: all 2s ease-in-out;
+    width: 200px;
+}
+
+.list_line>li:hover .tooltip ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
 }
 
 
@@ -437,22 +496,28 @@ header{
     justify-content: space-around;
     width: 100%;
     align-items: center;
-    /* background-color: #B51D1D; */
-    color: #ffffff;
     padding: 10% 0 10% 0;
 }
 
 .box{
     display: inline-flex;
+    justify-content: space-around;
     box-sizing: border-box;
     width: 100%;
+
 }
 
-.box>form{
-    width: 60%;
+.Form{
+    width: 50%;
+    text-align: center;
 }
 
 @media screen and (max-width: 950px) {
+
+    .box{
+        flex-wrap: wrap;
+    }
+
     .container{
         flex-wrap: wrap;
 
@@ -477,17 +542,22 @@ header{
 #article-content{
     margin: 0;
     width: 100%;
-    background-color: #B51D1D;
-    color: #ffffff;
+    background-color: transparent;
+    color: #000;
 }
 
 #content{
     padding: 0;
 }
 
+#article-content>p{
+    color: #000;
+}
+
 #article-content>h1{
     margin-block-start: 0em;
     margin-block-end: 0em;
+    color: #000;
     text-align: center;
     font: 1000 40px 'Californian FB', 'sans-serif';
 }
@@ -510,3 +580,43 @@ header{
     font-size: 5rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Formulaire d'inscription */
+
+div.Form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(45, 99, 45);
+    margin-bottom: 20px;
+    font: 700 20px 'Californian FB', 'sans-serif';
+}
+
+form>h2{
+    font: 1000 40px 'Californian FB', 'sans-serif';
+}
+
+form>div.input{
+    text-align: center;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+form>div.input>p{
+    margin-left: 10%;
+    text-align: start;
+    font: 1000 15px 'Californian FB', 'sans-serif';
+}
+
+form>div.input>input{
+    padding: 10px;
+    width: 70%;
+    height: 80%;
+}
+
+form>div.input>textarea{
+    width: 70%;
+    height: 200px;
+    padding: 10px;
+}
+

@@ -1,11 +1,26 @@
-const tooltips = document.querySelectorAll('.tooltip');
-const card = document.querySelectorAll('.card')
+// const Nav_elt1 = document.querySelector('#Territoire_li');
+// const Nav_elt2 = document.querySelector('#Developement_econe_li');
+// const Nav_elt3 = document.querySelector('#Developement_ecol_li');
+// const Nav_elt4 = document.querySelector('#Infracstructure_li');
+// const tooltip1 = document.querySelector('#tooltip-1');
+// const tooltip2 = document.querySelector('#tooltip-2');
+// const tooltip3 = document.querySelector('#tooltip-3');
+// const tooltip4 = document.querySelector('#tooltip-4');
 
-card.forEach(element => {
-    element.addEventListener('onclick', )
-});
 
+function showtooltip(params) {
+    const tooltip = document.getElementById(params);   
+    tooltip.style.display = 'flex';
+    tooltip.style.justifyContent = 'space-around'
+}
 
+function hidetooltip(params) {
+    const tooltip = document.getElementById(params); 
+    const menu = document.getElementById('menu');
+    tooltip.style.display = 'none';
+}
+
+// Fonction pour basculer l'affichage du menu
 function toggleMenu() {
     let menuicon = document.getElementById("hamburger-menu");
     let menucontent = document.getElementById("Header_Menu");
@@ -13,41 +28,49 @@ function toggleMenu() {
     menuicon.classList.toggle("open");
 }
 
+// Fonction pour afficher un article spécifique
 function viewArticle(params) {
-    localStorage.setItem('selectedArticle', params);
+    localStorage.setItem('selectedArticle', JSON.stringify(params));
     window.location.href = 'article.html';
 }
 
+// Fonction pour ouvrir une nouvelle page
 function openNewPage(params) {
     window.location.href = params;
 }
 
-function article_load(params , name) {
+// Fonction pour charger des articles dynamiquement
+function article_load(params, name) {
     let container = document.getElementById(name);
    
-    params.forEach(element  => {
-        var obj = params;
+    params.forEach(element => {
         container.innerHTML += `
         <article class="card">
             <img src="${element.img}" alt="">
             <h2>${element.titre}</h2>
             <p>${element.text}</p>
-            <button class="more" onclick="viewArticle(${JSON.stringify(obj)})"> voir plus >></button>
+            <button class="more" onclick='viewArticle(${JSON.stringify(element)})'>voir plus >></button>
         </article>`;
     });
 }
 
-function principale_image_load(params) {
-    
+// Fonction pour charger l'image principale (fonction à compléter)
+function principale_image_load(name, elt) {
+    let container = document.getElementById(name);
+    container.innerHTML = `
+            <img src="${elt.img}" alt="" onclick='viewArticle(${JSON.stringify(elt)})'>
+            <h2>Le president</h2>
+            <H2 id='name'>${elt.titre}</H2>`
+            ;
 }
 
-function redirect_load(params , name) {
+// Fonction pour rediriger après avoir chargé des articles
+function redirect_load(params, name) {
     let container = document.getElementById(name);
     
-    params.forEach((element , index) => {
-        var obj = params[index];
+    params.forEach(element => {
         container.innerHTML += `
-        <article class="card" onclick="viewArticle(${obj})">
+        <article class="card" onclick='viewArticle(${JSON.stringify(element)})'>
             <img src="${element.img}" alt="">
             <h2>${element.titre}</h2>
             <p>${element.text}</p>
@@ -55,117 +78,66 @@ function redirect_load(params , name) {
     });
 }
 
-function showtooltip(params) {
-    tooltips.forEach(element => {
-        if (element.id === params) {
-            let tooltip = document.getElementById(tooltips.id);
-            tooltip.style.display = 'block';
-            console.log('a');
-        }
-    });
-}
 
+// Exemple de données à utiliser pour les fonctions de chargement
 var teste = [
     {
-        img:"img/IMG-20240820-WA0182.jpg",
-        titre:"Lorem ipsum dolor sit.",
-        text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
+        img: "img/IMG-20240820-WA0182.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
     {
-        img:"img/IMG-20240820-WA0183.jpg",
-        titre:"Lorem ipsum dolor sit.",
-        text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
+        img: "img/IMG-20240820-WA0183.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
     {
-        img:"img/IMG-20240820-WA0184.jpg",
-        titre:"Lorem ipsum dolor sit.",
-        text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
+        img: "img/IMG-20240820-WA0184.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
-]
+];
 
+// Autres exemples de données
 var terr = [
     {
-        img:"",
-        titre:"",
-        text:"",
+        img: "img/IMG-20240820-WA0184.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    }
-    
-];
+]; // Remplir avec des données réelles
 var Deveco = [
     {
-        img:"",
-        titre:"",
-        text:"",
+        img: "img/IMG-20240820-WA0184.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    }
 ];
 var DevSocio = [
     {
-        img:"",
-        titre:"",
-        text:"",
+        img: "img/IMG-20240820-WA0184.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    }
 ];
 var infra = [
     {
-        img:"",
-        titre:"",
-        text:"",
+        img: "img/IMG-20240820-WA0184.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    }
 ];
 var actu = [
     {
-        img:"",
-        titre:"",
-        text:"",
+        img: "img/IMG-20240820-WA0184.jpg",
+        titre: "Lorem ipsum dolor sit.",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis pariatur in dolores autem omnis, repellat eos recusandae fuga at illum aspernatur id ipsum?",
     },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    },
-    {
-        img:"",
-        titre:"",
-        text:"",
-    }
 ];
+
+
+var bio = {
+    img: "img/image.png",
+    titre: "M. Aka Aouélé",
+
+}
