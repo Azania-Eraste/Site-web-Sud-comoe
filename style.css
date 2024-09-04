@@ -15,11 +15,7 @@ footer h2{
     
 }
 
-form{
-    margin: 2% auto;
-    position: relative;
-    background-color: transparent;
-}
+
 
 input{
     width: 70%;
@@ -261,6 +257,8 @@ header{
     
 }
 
+/* barre de navigation */
+
 .list_line{
     list-style-type: none;
     margin-block-start: 2em;
@@ -273,6 +271,68 @@ header{
     margin: 1%;
 
 }
+
+.tooltip{
+    display: none;
+    transition: all 2s ease-in-out;
+}
+
+#tooltip-1{
+    left: 25%;
+}
+
+#tooltip-2{
+    left: 39%;
+}
+
+#tooltip-3{
+    left: 53%;
+}
+
+#tooltip-4{
+    left: 68%;
+}
+
+#empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20% 0 20% 0;
+}
+
+.list_line>li:hover .tooltip {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transition: all 2s ease-in-out;
+}
+
+.list_line>li:hover .tooltip ul hr{
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.list_line>li:hover .tooltip ul{
+    display: block;
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(26, 26, 119);
+    list-style: none;
+    transition: all 2s ease-in-out;
+}
+
+
+.list_line>li:hover .tooltip ul li{
+    transition: all 2s ease-in-out;
+    width: 200px;
+}
+
+.list_line>li:hover .tooltip ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
 
 .list_line select{
     color: rgb(26, 26, 119);
@@ -427,60 +487,6 @@ header{
     flex-direction: column;
 }
 
-.tooltip{
-    display: none;
-    transition: all 2s ease-in-out;
-}
-
-#tooltip-1{
-    left: 25%;
-}
-
-#tooltip-2{
-    left: 40%;
-}
-
-#tooltip-3{
-    left: 56%;
-}
-
-#tooltip-4{
-    left: 72%;
-}
-
-.list_line>li:hover .tooltip {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transition: all 2s ease-in-out;
-}
-
-.list_line>li:hover .tooltip ul hr{
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
-.list_line>li:hover .tooltip ul{
-    display: block;
-    margin: 10px;
-    padding: 15px;
-    background-color: rgb(26, 26, 119);
-    list-style: none;
-    transition: all 2s ease-in-out;
-}
-
-
-.list_line>li:hover .tooltip ul li{
-    transition: all 2s ease-in-out;
-    width: 200px;
-}
-
-.list_line>li:hover .tooltip ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-}
-
 
 .grid{
 
@@ -507,10 +513,7 @@ header{
 
 }
 
-.Form{
-    width: 50%;
-    text-align: center;
-}
+
 
 @media screen and (max-width: 950px) {
 
@@ -544,10 +547,13 @@ header{
     width: 100%;
     background-color: transparent;
     color: #000;
+
 }
 
 #content{
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #article-content>p{
@@ -582,6 +588,17 @@ header{
 }
 
 /* Formulaire d'inscription */
+
+.Form{
+    width: 50%;
+    text-align: center;
+}
+
+form{
+    margin: 2% auto;
+    position: relative;
+    background-color: transparent;
+}
 
 div.Form{
     display: flex;
